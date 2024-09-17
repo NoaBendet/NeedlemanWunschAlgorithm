@@ -71,7 +71,7 @@ F(i,j)- the actual matrix in row - i, column - j
 
 G- gap penalty 
 
-Sx[i],y[]j- return 1 if the current char in both strings are matched, else return -1 x- the query string (xi is the char in index i)
+Sx[i],y[j]- return 1 if the current char in both strings are matched, else return -1 x- the query string (xi is the char in index i)
 
 y- the target string (yj is the char in index j)
 
