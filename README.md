@@ -2,7 +2,8 @@
 
 Liraz Gabbay, Noa Bendet, Or Finkelstein 
 
-Background:
+
+## Background:
 
 The most commonly asked question in molecular biology is whether two given sequences are related or not, in order to identify their structure.
 
@@ -22,7 +23,8 @@ The Needleman-Wunsch algorithm was developed by Saul B. Needleman and Christian 
 
 In this program, we will explore the Needleman-Wunsch algorithm by implementing the algorithm using randomly generated strings. Subsequently, we will analyze the outcomes and draw conclusions based on the results.
 
-How does the algorithm work?
+
+## How does the algorithm work?
 
 The scoring scheme is a set of rules which assigns the alignment score to any given alignment of two sequences.
 
@@ -44,29 +46,26 @@ The implementation requires 3 key steps: Initialization, Matrix filling and Trac
 
    The first row and column are filled as arithmetic progression of gap penalties.
 
-2. Matrix filling - to assign a value to each cell in the matrix we will calculate three           possible penalty scores: 
+2. Matrix filling - to assign a value to each cell in the matrix we will calculate three possible penalty scores: 
 
-Assume that the current cell is (i,j).
+   Assume that the current cell is (i,j).
 
-Left - add the gap penalty to the score in cell (i, j-1).
+   Left - add the gap penalty to the score in cell (i, j-1).
 
-Up - add the gap penalty to the score in cell (i-1, j).
+   Up - add the gap penalty to the score in cell (i-1, j).
 
-Diagonal - add the match/mismatch score of the current characters to the  
+   Diagonal - add the match/mismatch score of the current characters to the score in cell (i-1, j-1).
 
-score in cell (i-1, j-1).
+   Each of these scenarios provide different scores. To maximize the final score and reduce the cost, we have to take the maximum from these scenarios. 
 
-Each of these scenarios provide different scores. To maximize the final score and reduce the cost, we have to take the maximum from these scenarios. 
+   For each (i,j) cell we will populate it with the max of these 3 numbers.
 
-For each (i,j) cell we will populate it with the max of these 3 numbers.
-
-3. Traceback - after initializing and filling the matrix, the final step is to traceback through the matrix starting at the bottom right until we get to the top left (or from Matrix(m, n) to Matrix(0, 0)). The algorithm traces the optimal alignment path by iteratively comparing values in the scoring matrix (which have been calculated in step 2). The alignment strings and the score are updated accordingly at each step. There are three possible moves: diagonally (toward the top-left corner of the matrix), up, or left. This will provide the optimal 
-
-   alignment, and will determine the longest common substring.
+3. Traceback - after initializing and filling the matrix, the final step is to traceback through the matrix starting at the bottom right until we get to the top left (or from Matrix(m, n) to Matrix(0, 0)). The algorithm traces the optimal alignment path by iteratively comparing values in the scoring matrix (which have been calculated in step 2). The alignment strings and the score are updated accordingly at each step. There are three possible moves: diagonally (toward the top-left corner of the matrix), up, or left. This will provide the optimal alignment, and will determine the longest common substring.
 
 ![](Aspose.Words.bb6d4977-c5d8-433c-b380-977e86ff6bf8.003.png)
 
-Definitions:
+
+## Definitions:
 
 F(i,j)- the actual matrix in row - i, column - j 
 
@@ -104,7 +103,8 @@ We randomly generated sequences, each consisting of an equal distribution of fou
 
 The length of the randomly generated sequences was either 6 or 15.![](Aspose.Words.bb6d4977-c5d8-433c-b380-977e86ff6bf8.004.png)
 
-Results: 
+
+## Results: 
 
 We had run the algorithm for 100,000 iterations, for each string length. The results obtained for a string of length 6 are:
 
@@ -132,7 +132,8 @@ The distribution is focused on the negative end.
 
 Negative scores are more frequent, particularly around -6 to -4, and are relatively common.
 
-Conclusion:
+
+## Conclusion:
 
 We managed to implement the Needleman–Wunsch algorithm and we successfully achieved the best score for the alignment of two DNA sequences.
 
