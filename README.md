@@ -75,6 +75,7 @@ Sx[i],y[j]- return 1 if the current char in both strings are matched, else retur
 
 y- the target string (yj is the char in index j)
 
+
 **The research question:**
 
 In this research we will define a match score of 1, a mismatch score of -1, and a gap penalty of -2.
@@ -82,6 +83,7 @@ In this research we will define a match score of 1, a mismatch score of -1, and 
 We are interested in finding out what will happen If we generate two random strings of equal length and apply the Needleman-Wunsch. What will be the distribution of calculation scores between these sequences?
 
 Is there a pattern that can be expected for the calculation scores between two randomly generated strings of equal length?
+
 
 **The research assumption:**
 
