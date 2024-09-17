@@ -1,4 +1,4 @@
-﻿**Needleman–Wunsch algorithm**
+## ﻿**Needleman–Wunsch algorithm**
 
 Liraz Gabbay, Noa Bendet, Or Finkelstein 
 
@@ -75,7 +75,7 @@ Sx[i],y[]j- return 1 if the current char in both strings are matched, else retur
 
 y- the target string (yj is the char in index j)
 
-The research question:
+**The research question:**
 
 In this research we will define a match score of 1, a mismatch score of -1, and a gap penalty of -2.
 
@@ -83,7 +83,7 @@ We are interested in finding out what will happen If we generate two random stri
 
 Is there a pattern that can be expected for the calculation scores between two randomly generated strings of equal length?
 
-The research assumption:
+**The research assumption:**
 
 Based on the match, mismatch score and the gap penalty that we have already 
 
@@ -91,7 +91,7 @@ defined, we assume that the result values will be between gap\_penalty\*length t
 
 the lowest values of the distribution. For example, the score match\_score\*length is rare because it is not likely to get exactly the same two strings (the probability is 0.25^length). 
 
-About our implementation:
+## About our implementation:
 
 We have implemented the Needleman-Wunsch algorithm in a Java program, utilizing arrays as our chosen data structure.
 
